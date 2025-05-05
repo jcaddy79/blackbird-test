@@ -5,9 +5,7 @@ This repository serves as a demo space showcasing sample OpenAPI specifications.
 ## 📁 Folder Structure
 /sample-spec/
 ├── Jeep Rubicon Parts Management API.json
-
 ├── jeep-rubicon-parts-management-api.json
-
 └── user-management.json
 
 
