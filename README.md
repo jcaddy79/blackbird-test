@@ -6,7 +6,7 @@ This repository serves as a demo space showcasing sample OpenAPI specifications.
 
 - **Jeep Rubicon Parts Management API.json**  
 
-- **jeep-rubicon-parts-management-api.json**  
+- **Jeep Rubicon Parts Management API v2.json**  
 
 - **user-management.json**  
   A generic user management API spec helps test standard endpoints like user creation, authentication, and retrieval.
