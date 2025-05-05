@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Sample API",
+    "title": "User Management",
     "description": "This is a demo API with User management endpoints and a simple API health check.",
-    "version": "1.0.0",
+    "version": "1.2.5",
     "contact": {
       "name": "API Support",
       "url": "http://www.example.com/support",
