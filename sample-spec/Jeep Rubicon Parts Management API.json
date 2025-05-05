@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Jeep Rubicon Parts Management API",
+    "title": "Jeep Rubicon Parts Management API v1",
     "description": "API for managing parts of a Jeep Rubicon, including adding, editing, and deleting parts such as tires, bumpers, and lights.",
     "version": "1.0.0",
     "contact": {
