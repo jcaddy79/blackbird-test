@@ -47,13 +47,13 @@
             }
           },
           "400": {
-            "description": "Invalid input"
+            "description": "Bumpy ride: invalid input encountered on this off-road journey."
           },
           "404": {
-            "description": "Not found"
+            "description": "Lost the trail: resource not found amidst the dunes."
           },
           "500": {
-            "description": "Internal server error"
+            "description": "Engine misfire: internal rugged error on our path."
           }
         }
       },
@@ -62,8 +62,30 @@
         "tags": [
           "Parts"
         ],
-        "summary": "List all parts",
-        "description": "Retrieves a list of all parts for the Jeep Rubicon.",
+        "summary": "List all parts with pagination",
+        "description": "Retrieves a paginated list of all parts for the Jeep Rubicon.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of items per page",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "List of parts retrieved successfully",
@@ -79,10 +101,10 @@
             }
           },
           "404": {
-            "description": "Parts not found"
+            "description": "No parts on the trail: could not locate any under the Jeep canopy."
           },
           "500": {
-            "description": "Internal server error"
+            "description": "Overheated engine: encountered an internal Jeep meltdown."
           }
         }
       }
@@ -128,13 +150,13 @@
             }
           },
           "400": {
-            "description": "Invalid input"
+            "description": "Mud stuck in the gears: invalid update input."
           },
           "404": {
-            "description": "Part not found"
+            "description": "Missing spare: part not found on this rugged trail."
           },
           "500": {
-            "description": "Internal server error"
+            "description": "Jeep engine sputter: internal error under the hood."
           }
         }
       },
@@ -161,10 +183,10 @@
             "description": "Part deleted successfully"
           },
           "404": {
-            "description": "Part not found"
+            "description": "Part went off-road: resource not found."
           },
           "500": {
-            "description": "Internal server error"
+            "description": "Transmission trouble: internal error during teardown."
           }
         }
       }
