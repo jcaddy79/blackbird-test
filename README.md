@@ -1,2 +1,34 @@
 # blackbird-test
-Test repo to demo Blackbird git integration.
+
+This repository serves as a demo space showcasing sample OpenAPI specifications. It includes a collection of example API definitions to help with exploring OpenAPI formats, testing tooling integrations, or demonstrating usage patterns.
+
+## 📁 Folder Structure
+/sample-spec/
+├── Jeep Rubicon Parts Management API.json
+├── jeep-rubicon-parts-management-api.json
+└── user-management.json
+
+
+### Included Specs
+
+- **Jeep Rubicon Parts Management API.json**  
+
+- **jeep-rubicon-parts-management-api.json**  
+
+- **user-management.json**  
+  A generic user management API spec helps test standard endpoints like user creation, authentication, and retrieval.
+
+## 🛠️ Use Cases
+
+- Experiment with OpenAPI tooling (e.g., Blackbird).
+- Compare specification styles, structure, and naming conventions.
+- Use as a starting point or template for your own OpenAPI specs.
+
+## 🚀 Getting Started
+
+To preview any of the OpenAPI files locally:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/openapi-specs-demo.git
+   cd openapi-specs-demo
