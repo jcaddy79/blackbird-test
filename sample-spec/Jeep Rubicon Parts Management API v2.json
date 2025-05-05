@@ -1,0 +1,219 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Jeep Rubicon Parts Management API v2",
+    "description": "API for managing parts of a Jeep Rubicon, including adding, editing, and deleting parts such as tires, bumpers, and lights.",
+    "version": "2.0.0",
+    "contact": {
+      "name": "Jeep Parts Support",
+      "url": "https://jeep.parts/support",
+      "email": "support@jeep.parts"
+    }
+  },
+  "tags": [
+    {
+      "name": "Parts",
+      "description": "Operations related to Jeep Rubicon parts"
+    }
+  ],
+  "paths": {
+    "/parts": {
+      "post": {
+        "operationId": "addPart",
+        "tags": [
+          "Parts"
+        ],
+        "summary": "Add a new part",
+        "description": "Creates a new part for the Jeep Rubicon.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Part"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Part created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Part"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "get": {
+        "operationId": "listParts",
+        "tags": [
+          "Parts"
+        ],
+        "summary": "List all parts",
+        "description": "Retrieves a list of all parts for the Jeep Rubicon.",
+        "responses": {
+          "200": {
+            "description": "List of parts retrieved successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Part"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Parts not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/parts/{partId}": {
+      "put": {
+        "operationId": "editPart",
+        "tags": [
+          "Parts"
+        ],
+        "summary": "Edit an existing part",
+        "description": "Updates an existing part for the Jeep Rubicon.",
+        "parameters": [
+          {
+            "name": "partId",
+            "in": "path",
+            "required": true,
+            "description": "ID of the part to edit",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Part"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Part updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Part"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Part not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deletePart",
+        "tags": [
+          "Parts"
+        ],
+        "summary": "Delete a part",
+        "description": "Deletes a part from the Jeep Rubicon.",
+        "parameters": [
+          {
+            "name": "partId",
+            "in": "path",
+            "required": true,
+            "description": "ID of the part to delete",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Part deleted successfully"
+          },
+          "404": {
+            "description": "Part not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Part": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "type",
+          "description"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "part-12345"
+          },
+          "name": {
+            "type": "string",
+            "example": "All-Terrain Tire"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Tire",
+              "Bumper",
+              "Light"
+            ],
+            "example": "Tire"
+          },
+          "description": {
+            "type": "string",
+            "example": "A durable all-terrain tire suitable for off-road adventures."
+          },
+          "price": {
+            "type": "number",
+            "format": "float",
+            "example": 199.99
+          },
+          "manufacturer": {
+            "type": "string",
+            "example": "Goodyear"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
